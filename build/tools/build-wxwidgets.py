@@ -265,7 +265,9 @@ def main(scriptName, args):
                     "--with-macosx-sdk=/Developer/SDKs/MacOSX10.4u.sdk")
             else:
                 wxpy_configure_opts.append(
-                    "--with-macosx-sdk=/Developer/SDKs/MacOSX10.5.sdk")
+                    "--with-macosx-sdk=/Developer/SDKs/MacOSX10.6.sdk")
+                wxpy_configure_opts.append(
+                        "--with-macosx-version-min=10.5")
 
 
         if not options.mac_framework:
