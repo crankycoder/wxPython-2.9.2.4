@@ -1,0 +1,39 @@
+  parameter 'bitmap'
+  parameter 'bitmap'
+  parameter 'clientData'
+  parameter 'flags'
+  parameter 'shortName'
+  parameter 'winid'
+error: failed to run html help compiler on index.hhp
+mainpages/const_stdevtid.h:623: warning: explicit link request to 'wxStockID' could not be resolved
+overviews/helloworld.h:18: warning: found </tt> tag without matching <tt>
+overviews/richtextctrl.h:3446: warning: Found unknown command `\null'
+overviews/string.h:346: warning: explicit link request to 'wxSnprintf' could not be resolved
+overviews/string.h:346: warning: explicit link request to 'wxVsnprintf' could not be resolved
+wx/affinematrix2d.h:85: warning: Found unknown command `\t'
+wx/affinematrix2d.h:85: warning: Found unknown command `\t'
+wx/affinematrix2d.h:85: warning: Found unknown command `\t'
+wx/affinematrix2d.h:85: warning: Found unknown command `\t'
+wx/affinematrix2d.h:95: warning: Found unknown command `\t'
+wx/affinematrix2d.h:95: warning: Found unknown command `\t'
+wx/defs.h:526: warning: unexpected token TK_EOF as the argument of ref
+wx/event.h:3186: warning: explicit link request to 'wxHelpEventOrigin' could not be resolved
+wx/event.h:3186: warning: explicit link request to 'wxHelpEventOrigin' could not be resolved
+wx/event.h:3186: warning: explicit link request to 'wxHelpEventOrigin' could not be resolved
+wx/event.h:3563: warning: explicit link request to 'wxNavigationKeyEventFlags' could not be resolved
+wx/html/helpctrl.h:174: warning: Found unknown command `\enable'
+wx/intl.h:445: warning: The following parameters of wxLocale::Init(const wxString &name, const wxString &shortName=wxEmptyString, const wxString &locale=wxEmptyString, bool bLoadDefault=true) are not documented:
+wx/intl.h:445: warning: argument 'short' of command @param is not found in the argument list of wxLocale::Init(const wxString &name, const wxString &shortName=wxEmptyString, const wxString &locale=wxEmptyString, bool bLoadDefault=true)
+wx/log.h:1282: warning: explicit link request to 'GetLastError()' could not be resolved
+wx/richtext/richtextctrl.h:2111: warning: The following parameters of wxRichTextEvent::wxRichTextEvent(wxEventType commandType=wxEVT_NULL, int winid=0) are not documented:
+wx/richtext/richtextctrl.h:2111: warning: argument 'id' of command @param is not found in the argument list of wxRichTextEvent::wxRichTextEvent(wxEventType commandType=wxEVT_NULL, int winid=0)
+wx/textctrl.h:1230: warning: argument 'col' of command @param is not found in the argument list of wxTextCtrl::HitTest(const wxPoint &pt, long *pos) const
+wx/textctrl.h:1230: warning: argument 'pos' of command @param is not found in the argument list of wxTextCtrl::HitTest(const wxPoint &pt, wxTextCoord *col, wxTextCoord *row) const
+wx/textctrl.h:1230: warning: argument 'row' of command @param is not found in the argument list of wxTextCtrl::HitTest(const wxPoint &pt, long *pos) const
+wx/thread.h:1267: warning: The following parameters of wxThread::Wait(wxThreadWait flags=wxTHREAD_WAIT_BLOCK) are not documented:
+wx/thread.h:1267: warning: argument 'waitMode' of command @param is not found in the argument list of wxThread::Wait(wxThreadWait flags=wxTHREAD_WAIT_BLOCK)
+wx/toolbar.h:732: warning: The following parameters of wxToolBar::SetToolClientData(int id, wxObject *clientData) are not documented:
+wx/toolbar.h:740: warning: The following parameters of wxToolBar::SetToolDisabledBitmap(int id, const wxBitmap &bitmap) are not documented:
+wx/toolbar.h:770: warning: The following parameters of wxToolBar::SetToolNormalBitmap(int id, const wxBitmap &bitmap) are not documented:
+wx/valnum.h:295: warning: argument 'precision' of command @param is not found in the argument list of wxFloatingPointValidator< T >::wxFloatingPointValidator(ValueType *value=NULL, int style=wxNUM_VAL_DEFAULT)
+wx/wizard.h:461: warning: Illegal command \xrefitem as the argument of a \b command

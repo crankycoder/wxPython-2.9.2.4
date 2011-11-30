@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!-- $Id: minimal.bkl 44359 2007-02-05 01:15:02Z KO $ -->
+
+<makefile>
+
+    <if cond="not isdefined('PLATFORM_OS')">
+        <option name="PLATFORM_OS">
+            <values>win,mac,linux,none</values>
+            <default-value>none</default-value>
+            <description>
+                The platform wxWebKit is being built on/for.
+            </description>
+        </option>
+    </if>
+    
+    <if cond="not isdefined('PYTHON_VERSION')">
+        <option name="PYTHON_VERSION">
+            <values>24,25</values>
+            <default-value>25</default-value>
+            <description>
+                Python version we're building against. 
+            </description>
+        </option>
+    </if>
+    
+    <if cond="not isdefined('PYTHON_LIBDIR')">
+        <option name="PYTHON_LIBDIR" category="path">
+            <default-value>C:/Python25/Libs</default-value>
+            <description>
+                The directory containing the Python library to link against.
+            </description>
+        </option>
+    </if>
+    
+    <set var="DLLEXT">
+        <if cond="PLATFORM_OS=='win'">.dll</if>
+        <if cond="PLATFORM_OS=='linux'">.so</if>
+        <if cond="PLATFORM_OS=='mac'">.dylib</if>
+    </set>
+    
+    <include file="presets/wx.bkl"/>
+
+    <dll id="eventsim" template="wx">
+        <dllname>eventsim</dllname>
+
+        <!-- this sample builds always in debug mode; if you have
+             compiled wxWidgets in release mode, you'll get link errors! -->
+        <debug-info>on</debug-info>
+        <runtime-libs>dynamic</runtime-libs>
+        
+        <set var="PLAT_SOURCES">
+            <if cond="PLATFORM_OS=='linux'">
+                eventsim_gtk.cpp
+            </if>
+            <if cond="PLATFORM_OS=='mac'">
+                eventsim_mac.cpp
+            </if>
+            <if cond="PLATFORM_OS=='win'">
+                eventsim_win.cpp
+            </if>
+        </set>
+        
+        <sources>UIEventSimulator.cpp $(PLAT_SOURCES)</sources>
+        
+        <wx-lib>core</wx-lib>
+        <wx-lib>base</wx-lib>
+    </dll>
+    
+    <module id="eventsim_python" template="wx">
+            <!-- this sample builds always in debug mode; if you have
+             compiled wxWidgets in release mode, you'll get link errors! -->
+        <debug-info>on</debug-info>
+        <runtime-libs>dynamic</runtime-libs>
+        <dllname>_eventsim</dllname>
+        
+         <if cond="FORMAT=='gnu'">
+            <set var="MAC_FLAGS">
+                <if cond="PLATFORM_OS=='mac'">-bundle</if>
+            </set>
+            
+            <ldflags>$(MAC_FLAGS) -undefined dynamic_lookup</ldflags>
+        </if>
+        
+        <sources>eventsim_swig.cpp</sources>
+        <lib-path>.</lib-path>
+        <sys-lib>eventsim</sys-lib>
+        <wx-lib>core</wx-lib>
+        <wx-lib>base</wx-lib>
+    </module>
+
+</makefile>
